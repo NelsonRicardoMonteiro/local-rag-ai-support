@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ragdb
+    username: raguser
+    password: ragpass
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+app:
+  ollama:
+    base-url: http://localhost:11434
+    model: llama3
+    embedding-model: nomic-embed-text
+  rag:
+    top-k: 5
+    embedding-dim: 768
