@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Chat MVP</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="chat-wrap">
+      <header class="chat-header">
+        <h1>Customer Support AI</h1>
+        <p>Local RAG assistant powered by Ollama + pgvector</p>
+      </header>
+
+      <div id="messages" class="messages"></div>
+
+      <div id="typing" class="typing hidden">Assistant is typing...</div>
+
+      <form id="chat-form" class="composer">
+        <textarea id="chat-question" rows="2" placeholder="Ask your support question..." required></textarea>
+        <div class="composer-actions">
+          <button id="ask-btn" type="submit">Send</button>
+          <button id="clear-btn" type="button" class="ghost">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <aside class="tools">
+      <h2>Knowledge Tools</h2>
+      <p>Use this to inject extra FAQ/doc snippets while testing.</p>
+      <form id="ingest-form" class="stack">
+        <label>
+          Title
+          <input id="ingest-title" type="text" placeholder="Refund Policy" required>
+        </label>
+        <label>
+          Content
+          <textarea id="ingest-content" rows="5" placeholder="Customers can request a refund within 30 days..." required></textarea>
+        </label>
+        <button type="submit">Ingest Snippet</button>
+      </form>
+      <pre id="ingest-result" class="result"></pre>
+    </aside>
+  </main>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

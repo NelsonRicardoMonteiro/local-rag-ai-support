@@ -14,8 +14,8 @@ spring:
 app:
   ollama:
     base-url: http://localhost:11434
-    model: llama3
+    model: llama3.2:3b
     embedding-model: nomic-embed-text
   rag:
-    top-k: 5
+    top-k: 4
     embedding-dim: 768
